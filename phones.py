@@ -25,12 +25,12 @@ for datum in data:
         elif datum[-2] == "Other pocket":
             girlother += 1
 
-plt.pie([girlfront, girlback, girlother], labels=["Front", "Back", "Other"], startangle=90)
+plt.pie([girlfront, girlback, girlother], labels=["Front", "Back", "Other"], startangle=90, autopct='%1.2f%%')
 plt.title("Women's pants")
 plt.savefig("Womens.png")
 plt.clf()
 
-plt.pie([guyfront, guyback, guyother], labels=["Front", "Back", "Other"], startangle=90)
+plt.pie([guyfront, guyback, guyother], labels=["Front", "Back", "Other"], startangle=90, autopct='%1.2f%%')
 plt.title("Men's pants")
 plt.savefig("Mens.png")
 plt.clf()
@@ -50,7 +50,7 @@ for datum in data:
         right[place] += 1
 
 for l, r, title in zip(left, right, key):
-    plt.pie([l,r], labels=["Left","Right"], startangle=90, colors=["green","red"])
+    plt.pie([l,r], labels=["Left","Right"], startangle=90, colors=["green","red"], autopct='%1.2f%%')
     plt.title(title)
     plt.savefig(title.split('/')[0] +".png")
     plt.clf()
